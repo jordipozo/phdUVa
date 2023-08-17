@@ -9,7 +9,7 @@ import pathlib
 # Preparación de directorios y ficheros
 # directorio_defecto = '/Users/jordi/Desktop/FORMACION/CODE/phdUVa/videoandimus/' # ruta absoluta al directorio de trabajo
 # directorio_defecto ='phdUVa/videoandimus/' # ruta relativa al directorio de trabajo
-directorio_defecto = '/phdUVa/tree/main/videoandimus' # ruta relativa al directorio de trabajo
+directorio_defecto = '../tree/main/videoandimus' # ruta relativa al directorio de trabajo
 sujetos = os.listdir(directorio_defecto)
 sujetoseleccionado = st.sidebar.selectbox('Selecciona el sujeto a analizar', sujetos)
 actividades = []
