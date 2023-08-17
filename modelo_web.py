@@ -8,11 +8,11 @@ import pathlib
 
 # Preparación de directorios y ficheros
 # directorio_defecto = '/Users/jordi/Desktop/FORMACION/CODE/phdUVa/videoandimus/' # ruta absoluta al directorio de trabajo
-directorio_defecto ='../phdUVa/videoandimus/' # ruta relativa al directorio de trabajo
+directorio_defecto ='../phdUVa/videoandimus' # ruta relativa al directorio de trabajo
 sujetos = os.listdir(directorio_defecto)
 sujetoseleccionado = st.sidebar.selectbox('Selecciona el sujeto a analizar', sujetos)
 actividades = []
-directorio = pathlib.Path(directorio_defecto+sujetoseleccionado)
+directorio = pathlib.Path(directorio_defecto+"/"+sujetoseleccionado)
 for fichero in directorio.iterdir():
     if fichero.is_file() and (fichero.name.startswith("ik") and fichero.name.endswith(".mot")):
         actividades.append(fichero.name)
