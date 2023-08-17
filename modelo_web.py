@@ -7,8 +7,9 @@ import os
 import pathlib
 
 # Preparación de directorios y ficheros
-directorio_defecto = '/Users/jordi/Desktop/FORMACION/CODE/phdUVa/videoandimus/'
-sujetos = os.listdir('/Users/jordi/Desktop/FORMACION/CODE/phdUVa/videoandimus/')
+# directorio_defecto = '/Users/jordi/Desktop/FORMACION/CODE/phdUVa/videoandimus/' # ruta absoluta al directorio de trabajo
+directorio_defecto ='../phdUVa/videoandimus/' # ruta relativa al directorio de trabajo
+sujetos = os.listdir(directorio_defecto)
 sujetoseleccionado = st.sidebar.selectbox('Selecciona el sujeto a analizar', sujetos)
 actividades = []
 directorio = pathlib.Path(directorio_defecto+sujetoseleccionado)
@@ -20,10 +21,8 @@ fichero= (str(directorio) + '/'+ str(actividadseleccionada))
 
 # Carga de datos 
 
-# if actividadseleccionada != '':
 file_oi= fichero
-# else:
-#     file_oi="/Users/jordi/Desktop/FORMACION/CODE/phdUVa/videoandimus/S47/ik_S47_A01_T01.mot"
+
 i=0
 with open (file_oi, "r") as myfile:
     while i < 6:
